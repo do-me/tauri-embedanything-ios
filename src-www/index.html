@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="/static/styles/maplibre-gl.css" />
+    <style>
+      body {
+        margin: 0;
+      }
+      button {
+        margin-left: 10px;
+        height: 50px;
+        width: 200px;
+      }
+      #map {
+        height: 50vh;
+        width: 100%;
+        background-color: #6baed6;
+      }
+    </style>
+  </head>
+  <body>
+    <form class="row" id="greet-form">
+      <input id="greet-input" placeholder="Enter a name..." />
+      <button type="submit">Greet</button>
+    </form>
+    <p id="greet-msg"></p>
+
+
+    <form class="row" id="embedding-form">
+      <input id="embedding-input" placeholder="Enter text to embed..." />
+      <button type="submit">Generate Embedding</button>
+    </form>
+    <p id="embedding-msg"></p>
+    <button id="download-monaco" hidden>Download Monaco (250 KB)</button>
+    <button id="download-taiwan" hidden>Download Taiwan (130 MB)</button>
+    <span id="loc"></span>
+    <div id="map" hidden></div>
+    <script src="/dist/index.js" type="module"></script>
+  </body>
+</html>

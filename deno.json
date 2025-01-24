@@ -1,0 +1,35 @@
+{
+  "compilerOptions": {
+    "lib": [
+      "deno.ns",
+      "dom",
+      "dom.iterable",
+      "dom.asynciterable"
+    ]
+  },
+  "fmt": {
+    "include": ["src-www/"],
+    "exclude": ["src-www/dist/", "src-www/static/"],
+    "proseWrap": "preserve",
+    "semiColons": false,
+    "singleQuote": true
+  },
+  "lint": {
+    "include": ["src-www/"],
+    "exclude": ["src-www/dist/", "src-www/static/"]
+  },
+  "check": {
+    "include": ["src-www/"],
+    "exclude": ["src-www/dist/", "src-www/static/"]
+  },
+  "test": {
+    "include": ["src-www/"],
+    "exclude": ["src-www/dist/", "src-www/static/"]
+  },
+  "tasks": {
+    "setup": "deno cache build.ts --allow-scripts=npm:esbuild",
+    "check": "deno fmt && deno check ./src-www/index.ts && deno lint",
+    "build": "cargo tauri build",
+    "dev": "cargo tauri dev"
+  }
+}
